@@ -1,0 +1,78 @@
+{% raw %}
+var db = 'telegraf'
+
+var rp = 'autogen'
+
+var measurement = 'system'
+
+var groupBy = ['host']
+
+var whereFilter = lambda: TRUE
+
+var period = 30s
+
+var name = 'Host Deadman'
+
+var idVar = name + ':{{.Group}}'
+
+var blah = '{{index .Tags "host"}}'
+
+var message = 'The host {{index .Tags "host"}} is offline as of {{.Time}}.'
+
+var messageN = 'The host {{index .Tags "host"}} is back online at {{.Time}}.'
+
+var idTag = 'alertID'
+
+var levelTag = 'level'
+
+var messageField = 'message'
+
+var durationField = 'duration'
+
+var outputDB = 'chronograf'
+
+var outputRP = 'autogen'
+
+var outputMeasurement = 'alerts'
+
+var triggerType = 'deadman'
+
+var threshold = 0.0
+
+var data = stream
+    |from()
+        .database(db)
+        .retentionPolicy(rp)
+        .measurement(measurement)
+        .groupBy(groupBy)
+        .where(whereFilter)
+
+var trigger = data
+    |deadman(threshold, period)
+        .stateChangesOnly()
+        .message('{{ if eq .Level "CRITICAL" }}' + message + '{{else}}' + messageN + '{{end}}')
+        .id(idVar)
+        .idTag(idTag)
+        .levelTag(levelTag)
+        .messageField(messageField)
+        .durationField(durationField)
+        .slack()
+        .channel('#embassyalerts')
+{% endraw %}
+        .exec('butler_healing_agent', 'relaunch-worker', '-t', '{{ pillar['terraform_files'] }}', '-s', '{{ pillar['terraform_state'] }}', '-v', '{{ pillar['terraform_vars'] }}', '-p', '{{ pillar['terraform_provider'] }}')
+{% raw %}
+trigger
+    |eval(lambda: "emitted")
+        .as('value')
+        .keep('value', messageField, durationField)
+    |influxDBOut()
+        .create()
+        .database(outputDB)
+        .retentionPolicy(outputRP)
+        .measurement(outputMeasurement)
+        .tag('alertName', name)
+        .tag('triggerType', triggerType)
+
+trigger
+    |httpOut('output')
+{% endraw %}

@@ -1,0 +1,1 @@
+{"service": {"name": "rabbitmq", "tags": ["rabbitmq"], "port": {{ pillar['rabbitmq.port'] }} }}
