@@ -17,7 +17,7 @@ sudo yum install gcc gcc-c++ -y
 sudo yum install git -y
 
 sudo yum install python-devel -y
-sudo yum install python-pip -y
+sudo yum install python2-pip -y
 
 sudo yum install dnsmasq -y
 
