@@ -16,3 +16,4 @@ echo "id: $2" | sudo tee -a /etc/salt/minion
 echo "roles: [$3]" | sudo tee /etc/salt/grains
 sudo hostname $2
 sudo service salt-minion start
+sudo systemctl enable salt-minion
