@@ -6,6 +6,11 @@ prereqs_pip:
       - python-devel
       - python-psycopg2
 
+install_flask_cache:
+  pip.installed: 
+    - name: flask_cache
+    - upgrade: True
+
   
 install_numpy:
   pip.installed: 
