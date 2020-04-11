@@ -6,7 +6,7 @@ sudo yum -y update
 sudo yum install yum-plugin-priorities -y
 
 sudo yum install unzip tcpdump net-tools wget tmux -y
-sudo yum install postfix vixie-cron crontabs man mlocate logrotate logwatch wget which -y
+sudo yum install postfix crontabs man mlocate logrotate logwatch wget which -y
 sudo yum install bind-utils -y
 sudo yum install zlib-devel -y
 
