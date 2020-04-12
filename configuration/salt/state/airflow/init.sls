@@ -16,6 +16,10 @@ install_flask_cache:
     - name: flask_cache
     - upgrade: True
 
+install_werkzeug:
+  pip.installed:
+    - name: werkzeug==0.12.2
+    - upgrade: True
   
 install_numpy:
   pip.installed: 
