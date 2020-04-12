@@ -9,38 +9,30 @@ prereqs_pip:
 install_six:
   pip.installed:
     - name: six
-    - upgrade: True
 
 install_pandas:
   pip.installed:
     - name:  pandas==0.24.2
-    - upgrade: True
 
 install_flask_cache:
   pip.installed: 
     - name: flask_cache
-    - upgrade: True
 
 install_werkzeug:
   pip.installed:
     - name: werkzeug==0.12.2
-    # - upgrade: True
   
 install_numpy:
   pip.installed: 
-    - name: numpy==1.14.6
-    - upgrade: True
-    
+    - name: numpy==1.14.6  
   
 install_airflow:
   pip.installed: 
     - name: apache-airflow==1.8.2
-    - upgrade: True
     
 install_statsd:
   pip.installed: 
     - name: statsd
-    - upgrade: True
 
 airflow_group:
   group.present:
