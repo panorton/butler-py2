@@ -6,6 +6,11 @@ prereqs_pip:
       - python-devel
       - python-psycopg2
 
+install_pandas:
+  pip.installed:
+    - name:  pandas==0.24.2
+    - upgrade: True
+
 install_flask_cache:
   pip.installed: 
     - name: flask_cache
