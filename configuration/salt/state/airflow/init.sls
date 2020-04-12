@@ -25,7 +25,7 @@ install_numpy:
   
 install_airflow:
   pip.installed: 
-    - name: apache-airflow
+    - name: apache-airflow==1.8.2
     - upgrade: True
     
 install_statsd:
