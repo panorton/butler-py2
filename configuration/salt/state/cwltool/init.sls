@@ -1,4 +1,4 @@
-install_wheel:
+cwltool_install_wheel:
   pip.installed: 
     - name: wheel
     - upgrade: True

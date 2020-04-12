@@ -1,4 +1,4 @@
-install_wheel:
+pepper_install_wheel:
   pip.installed: 
     - name: wheel
     - upgrade: True
