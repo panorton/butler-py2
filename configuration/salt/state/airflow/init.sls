@@ -6,22 +6,22 @@ prereqs_pip:
       - python-devel
       - python-psycopg2
 
+install_werkzeug:
+  pip.installed:
+    - name: werkzeug==0.12.2
+
 install_six:
   pip.installed:
     - name: six
 
 install_pandas:
   pip.installed:
-    - name:  pandas==0.24.2
+    - name: pandas==0.24.2
 
 install_flask_cache:
   pip.installed: 
     - name: flask_cache
 
-install_werkzeug:
-  pip.installed:
-    - name: werkzeug==0.12.2
-  
 install_numpy:
   pip.installed: 
     - name: numpy==1.14.6  
