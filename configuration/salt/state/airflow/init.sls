@@ -6,10 +6,6 @@ prereqs_pip:
       - python-devel
       - python-psycopg2
 
-install_werkzeug:
-  pip.installed:
-    - name: werkzeug==0.12.2
-
 install_six:
   pip.installed:
     - name: six
