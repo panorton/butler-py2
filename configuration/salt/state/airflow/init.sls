@@ -14,7 +14,7 @@ install_flask_cache:
   
 install_numpy:
   pip.installed: 
-    - name: numpy
+    - name: numpy==1.14.6
     - upgrade: True
     
   
