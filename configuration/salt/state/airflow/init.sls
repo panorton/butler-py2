@@ -6,6 +6,11 @@ prereqs_pip:
       - python-devel
       - python-psycopg2
 
+install_six:
+  pip.installed:
+    - name: six
+    - upgrade: True
+
 install_pandas:
   pip.installed:
     - name:  pandas==0.24.2
