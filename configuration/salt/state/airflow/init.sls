@@ -5,10 +5,7 @@ prereqs_pip:
       - gcc
       - python-devel
       - python-psycopg2
-<<<<<<< HEAD
 
-=======
->>>>>>> tmp
 install_six:
   pip.installed:
     - name: six
