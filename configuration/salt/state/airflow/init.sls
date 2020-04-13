@@ -5,7 +5,10 @@ prereqs_pip:
       - gcc
       - python-devel
       - python-psycopg2
+<<<<<<< HEAD
 
+=======
+>>>>>>> tmp
 install_six:
   pip.installed:
     - name: six
@@ -29,6 +32,14 @@ install_airflow:
 install_statsd:
   pip.installed: 
     - name: statsd
+
+remove_newer_wekzueg:
+  pip.removed:
+    - name: werkzeug
+
+install_older_werkzeug:
+  pip.installed:
+    - name: werkzeug==0.12.2
 
 airflow_group:
   group.present:
