@@ -1,7 +1,3 @@
-install_werkzeug:
-  pip.installed:
-    - name: werkzeug==0.12.2
-
 celery_install_wheel:
   pip.installed: 
     - name: wheel
