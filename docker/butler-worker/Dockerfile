@@ -12,7 +12,7 @@ RUN yum -y -q --nogpgcheck install epel-release git postgresql-devel python-psyc
 
 RUN yum -y -q --nogpgcheck install python2-pip
 RUN pip install pip==9.0.3
-RUN pip install -U setuptools==43.0.0s
+RUN pip install -U setuptools==43.0.0
 
 # Install Celery
 RUN pip install wheel 
