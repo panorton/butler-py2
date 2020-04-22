@@ -46,3 +46,4 @@ RUN mkdir -p /etc/opt/airflow/dags
 COPY airflow.cfg /etc/opt/airflow/airflow.cfg
 ADD example-workflows /etc/opt/airflow/dags
 RUN chown -R airflow.airflow /etc/opt/airflow
+COPY set_airflow_env.sh /etc/profile.d/set_airflow_env.sh
