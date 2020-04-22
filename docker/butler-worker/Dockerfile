@@ -8,7 +8,7 @@
 FROM centos:centos7
 MAINTAINER Paul Norton panorton@sdsc.edu
 
-RUN yum -y -q epel-release install git postgresql-devel python-psycopg2 python-devel gcc
+RUN yum -y -q install epel-release git postgresql-devel python-psycopg2 python-devel gcc
 
 RUN yum -y -q install python2-pip
 RUN pip install pip==9.0.3
