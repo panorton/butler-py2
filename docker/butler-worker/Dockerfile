@@ -49,8 +49,8 @@ RUN chown -R airflow.airflow /etc/opt/airflow
 COPY set_airflow_env.sh /etc/profile.d/set_airflow_env.sh
 
 # Butler Tracker setup
-RUN mkdir /opt/butler
-ADD track /opt/butler
+RUN mkdir -p /opt/butler/track
+ADD track /opt/butler/track
 WORKDIR /opt/butler/track
 RUN pip install -e .
 RUN ln -s /opt/butler/track/tracker/bin/butler /usr/bin/butler
