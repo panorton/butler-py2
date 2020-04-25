@@ -17,7 +17,6 @@ RUN pip install -U setuptools==43.0.0
 # Install Celery
 RUN pip install wheel 
 RUN pip install Celery 
-RUN pip install celery[librabbitmq] 
 RUN pip install flower
 
 # Install Airflow
@@ -42,9 +41,10 @@ RUN mkdir /opt/airflow
 RUN chown -R airflow.airflow /opt/airflow
 RUN mkdir /var/log/airflow
 RUN chown -R airflow.airflow /var/log/airflow
-RUN mkdir -p /etc/opt/airflow/dags
+RUN mkdir -p /etc/opt/airflow
 COPY airflow.cfg /etc/opt/airflow/airflow.cfg
-ADD example-workflows /etc/opt/airflow/dags
+RUN mkdir -p /opt/airflow/dags/example-workflows
+ADD example-workflows /opt/airflow/dags/example-workflows
 RUN chown -R airflow.airflow /etc/opt/airflow
 COPY set_airflow_env.sh /etc/profile.d/set_airflow_env.sh
 
