@@ -4,11 +4,11 @@ allow_nginx_connect:
     - value: 1
     - persist: true
 
-
 nginx:
   pkg:
     - installed
   service.running:
+    - enable: True
     - watch:
       - pkg: nginx
       - file: /etc/nginx/nginx.conf
@@ -21,5 +21,3 @@ nginx:
     - group: root
     - mode: 640
     
-
-      
