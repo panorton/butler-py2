@@ -12,7 +12,7 @@ nginx:
     - watch:
       - pkg: nginx
       - file: /etc/nginx/nginx.conf
-      - file: /etc/nginx/sites-available/*
+      - file: /etc/nginx/sites-available*
 
 /etc/nginx/nginx.conf:
   file.managed:
