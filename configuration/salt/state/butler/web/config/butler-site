@@ -44,13 +44,13 @@ server {
 		proxy_set_header X-Forwarded-For $remote_addr;
 	}
 	
-	location ^~ /kibana/ {
-		proxy_pass http://kibana.service.consul:5601/;
-		proxy_set_header Host $host;
-		proxy_set_header X-Real_IP $remote_addr;
-		proxy_set_header X-Forwarded-For $remote_addr;
-		rewrite /kibana/(.*) /$1 break;
-	}
+	# location ^~ /kibana/ {
+	# 	proxy_pass http://kibana.service.consul:5601/;
+	# 	proxy_set_header Host $host;
+	# 	proxy_set_header X-Real_IP $remote_addr;
+	# 	proxy_set_header X-Forwarded-For $remote_addr;
+	# 	rewrite /kibana/(.*) /$1 break;
+	# }
 	
 	location ^~ /consul/ {
 		proxy_pass http://consul-ui.service.consul:8500/ui/;
