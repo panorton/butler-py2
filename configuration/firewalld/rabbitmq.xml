@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>RabbitMQ</short>
+  <description>RabbitMQ is message-broker software</description>
+  <port protocol="tcp" port="4369"/>
+  <port protocol="tcp" port="5672"/>
+  <port protocol="udp" port="15672"/>
+  <port protocol="tcp" port="25672"/>
+</service>
