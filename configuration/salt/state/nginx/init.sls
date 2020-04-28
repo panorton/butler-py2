@@ -12,7 +12,6 @@ nginx:
     - watch:
       - pkg: nginx
       - file: /etc/nginx/nginx.conf
-      - file: /etc/nginx/sites-available/butler-site
 
 /etc/nginx/nginx.conf:
   file.managed:
